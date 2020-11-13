@@ -15,6 +15,5 @@ namespace GUIH2
             this.overskrift = overskrift;
             this.text = text;
         }
-
     }
 }

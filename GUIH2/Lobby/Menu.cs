@@ -13,11 +13,12 @@ namespace GUIH2
         private string[] menuItems = { "New Game", "Resume Game", "Options", "Exit" };
         private Brush[] bruches = { Brushes.Black, Brushes.Black, Brushes.Black, Brushes.Black };
         private List<Label> menuLabels = new List<Label>();
-        
+        private List<DrawCharacterBox> characterBoxes = new List<DrawCharacterBox>();
         private Brush labelColor { get; set; }
 
         public Menu()
         {
+            LoadCharacters();
             DrawMenu();
         }
         public void DrawMenu()
@@ -49,18 +50,34 @@ namespace GUIH2
         private void MenuLabel_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Label labelDown = (Label)sender;
+            int i = 0;
             if((e.ChangedButton == MouseButton.Left))
             {
                foreach(Label label in menuLabels)
                 {
-                    menuLabels.Remove(label);
+                   //menuLabels.Remove(label);
                 }
                if(labelDown.Content.ToString() == "New Game")
                 {
-                    CharacterSelection CS = new CharacterSelection();
-                   // CS.CreateCharacterList();
+                    
+                }
+               if(labelDown.Content.ToString() == "Resume Game")
+                {
+                    
+                }
+                if (labelDown.Content.ToString() == "Options")
+                {
+
+                }
+                if (labelDown.Content.ToString() == "Exit")
+                {
+
                 }
             }
+        }
+        public List<DrawCharacterBox> returnDCBList()
+        {
+            return characterBoxes;
         }
         public Brush returnBrush()
         {
@@ -83,6 +100,16 @@ namespace GUIH2
         public List<Label> returnLabels()
         {
             return menuLabels;
+        }
+        public void LoadCharacters()
+        {
+            int i = 0;
+            CharacterSelection CS = new CharacterSelection();
+            foreach (Character characters in CS.returnCharacterlist())
+            {
+                DrawCharacterBox DCB = new DrawCharacterBox(CS.returnCharacter(i), CS.returnCharacterImageUri(i));
+                characterBoxes.Add(DCB);
+            }
         }
     }
 }
