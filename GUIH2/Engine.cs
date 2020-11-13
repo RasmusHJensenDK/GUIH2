@@ -15,15 +15,11 @@ namespace GUIH2
         }
         public void AddEnemies()
         {
-            for(int k = 0; k < 2; k++)
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    CharacterSelection CS_ENEMY = new CharacterSelection();
-                    Player enemy = new Player("Enemy", CS_ENEMY.returnCharacter(random.Next(0,3)));
-                    enemies[i] = enemy;
-                }
-            }
+
+        }
+        public void Run(Player player, Player[] enemies)
+        {
+
         }
     }
 }

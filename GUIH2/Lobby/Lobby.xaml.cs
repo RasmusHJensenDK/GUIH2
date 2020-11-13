@@ -21,7 +21,7 @@ namespace GUIH2
         public Lobby(string username)
         {
             this.username = username;
-            this.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\wwwroot\GUIH2\GUIH2\Media\sD8pkb.jpg")));
+            this.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\wwwroot\GUIH2\GUIH2\Media\522618.jpg")));
             InitializeComponent();
             //this.LoadMenu();
             LoadCharacterSelection();

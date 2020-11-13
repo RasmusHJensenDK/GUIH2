@@ -20,12 +20,10 @@ namespace GUIH2
     public partial class MainWindow : Window
     {
         private string username = "Username";
-        private string password = "Password";
         public MainWindow()
         {
             InitializeComponent();
             un.Text = username;
-            pw.Text = password;
         }
         //Lobby
         private void enterShoppinggrounds_Click(object sender, RoutedEventArgs e)
@@ -60,20 +58,6 @@ namespace GUIH2
             if (un.Text == "")
             {
                 un.Text = "Username";
-            }
-        }
-        private void pw_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (pw.Text == "Password")
-            {
-                pw.Text = "";
-            }
-        }
-        private void pw_MouseLeave(object sender, MouseEventArgs e)
-        {
-            if (pw.Text == "")
-            {
-                pw.Text = "Password";
             }
         }
     }

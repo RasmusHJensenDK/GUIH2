@@ -35,8 +35,15 @@ namespace GUIH2
             stackpanel.Children.Add(DrawLabel());
             stackpanel.Children.Add(DrawPicture());
             stackpanel.Children.Add(DrawInformation());
+            stackpanel.MouseDown += Stackpanel_MouseDown;
 
             return stackpanel;
+        }
+
+        public void Stackpanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Game Game = new Game();
+            Game.Show();
         }
 
         private void Stackpanel_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)

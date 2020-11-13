@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -11,7 +12,7 @@ namespace GUIH2
     class Menu
     {
         private string[] menuItems = { "New Game", "Resume Game", "Options", "Exit" };
-        private Brush[] bruches = { Brushes.Black, Brushes.Black, Brushes.Black, Brushes.Black };
+        private Brush[] bruches = { Brushes.Red, Brushes.Black, Brushes.Black, Brushes.Black };
         private List<Label> menuLabels = new List<Label>();
         private List<DrawCharacterBox> characterBoxes = new List<DrawCharacterBox>();
         private Brush labelColor { get; set; }
@@ -53,10 +54,6 @@ namespace GUIH2
             int i = 0;
             if((e.ChangedButton == MouseButton.Left))
             {
-               foreach(Label label in menuLabels)
-                {
-                   //menuLabels.Remove(label);
-                }
                if(labelDown.Content.ToString() == "New Game")
                 {
                     

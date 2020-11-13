@@ -11,7 +11,7 @@ namespace GUIH2
     {
         private List<Character> characterList = new List<Character>();
         private int counterForCharacter = 0;
-        private string[] names = { "Trump", "Biden", "Putin" };
+        private string[] names = { "Trump", "Kim Jong Un", "Putin" };
         private string[] Descriptions = { "Wooohah! You might think twice\n before selecting this big baby.\n He consider himself to be the \n top and will never stop  fighting \n to get there!", "So you choose an elderly guy. You might die quick in serverall ways!", "Kzunej Zubaj Nik nik. Putin will get you there!" };
         private List<Image> imageList = new List<Image>();
         public CharacterSelection()
