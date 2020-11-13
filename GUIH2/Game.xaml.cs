@@ -46,6 +46,9 @@ namespace GUIH2
                 GameCard GameCard = new GameCard(CS.returnCharacter(0), GML);
                 _GAMECARDLIST.Add(GameCard);
             }
+        }
+        private void AddSecondGameCards()
+        {
             for (int i = 0; i < 3; i++)
             {
                 CharacterSelection CS = new CharacterSelection();
@@ -53,12 +56,11 @@ namespace GUIH2
                 GameCard GameCard = new GameCard(CS.returnCharacter(0), GML);
                 _GAMESECONDLIST.Add(GameCard);
             }
-
         }
         private StackPanel CreateStackPanel()
         {
             StackPanel stp = new StackPanel();
-            stp.Orientation = Orientation.Horizontal;
+            stp.Orientation = Orientation.Vertical;
             AddGameCards();
             foreach(GameCard GC in _GAMECARDLIST)
             {
@@ -69,8 +71,8 @@ namespace GUIH2
         private StackPanel CreateSecondStackPanel()
         {
             StackPanel stp = new StackPanel();
-            stp.Orientation = Orientation.Vertical;
-            AddGameCards();
+            stp.Orientation = Orientation.Horizontal;
+            AddSecondGameCards();
             foreach (GameCard GC in _GAMESECONDLIST)
             {
                 stp.Children.Add(GC.CreateCard(300, 200));
