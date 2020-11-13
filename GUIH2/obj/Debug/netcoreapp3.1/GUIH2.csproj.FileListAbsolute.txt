@@ -1,0 +1,43 @@
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.exe
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.deps.json
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.runtimeconfig.json
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.runtimeconfig.dev.json
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.dll
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.pdb
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.csprojAssemblyReference.cache
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2_MarkupCompile.cache
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2_MarkupCompile.lref
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.g.resources
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.AssemblyInfoInputs.cache
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.AssemblyInfo.cs
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.csproj.CoreCompileInputs.cache
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.dll
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.pdb
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.genruntimeconfig.cache
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\Media\bg2.jpg
+C:\Users\c98101rhj\OneDrive - Ejner Hessel A S\Desktop\Skole H2\GUI\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\App.baml
+C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.exe
+C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\Media\bg2.jpg
+C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.deps.json
+C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.runtimeconfig.json
+C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.runtimeconfig.dev.json
+C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.dll
+C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\GUIH2.pdb
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.csprojAssemblyReference.cache
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\App.g.cs
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2_MarkupCompile.cache
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2_MarkupCompile.lref
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.g.resources
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.AssemblyInfoInputs.cache
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.AssemblyInfo.cs
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.csproj.CoreCompileInputs.cache
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.dll
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.pdb
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.genruntimeconfig.cache
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\Lobby.g.cs
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\Lobby.baml
