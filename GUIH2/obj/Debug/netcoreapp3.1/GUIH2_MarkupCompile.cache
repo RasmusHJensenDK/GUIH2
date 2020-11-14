@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\wwwroot\GUIH2\GUIH2\App.xaml
-3628057543
+3931326653
 
-17-1102460017
+19-432308076
 193687034782
-Game.xaml;Lobby\Lobby.xaml;MainWindow.xaml;
+Game\Game.xaml;Lobby\Lobby.xaml;MainWindow.xaml;
 
 False
 

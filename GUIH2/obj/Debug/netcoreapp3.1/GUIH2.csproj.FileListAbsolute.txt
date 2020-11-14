@@ -32,13 +32,11 @@ C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
 C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\wwwroot\GUIH2\GUIH2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\Game.g.cs
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\Lobby\Lobby.g.cs
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\App.g.cs
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2_MarkupCompile.cache
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2_MarkupCompile.lref
-C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\Game.baml
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\Lobby\Lobby.baml
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.g.resources
@@ -50,3 +48,5 @@ C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.dll
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.pdb
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.genruntimeconfig.cache
 C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\GUIH2.csprojAssemblyReference.cache
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\Game\Game.g.cs
+C:\wwwroot\GUIH2\GUIH2\obj\Debug\netcoreapp3.1\Game\Game.baml

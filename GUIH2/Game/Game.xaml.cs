@@ -16,21 +16,35 @@ namespace GUIH2
     {
         private List<GameCard> _GAMECARDLIST = new List<GameCard>();
         private List<GameCard> _GAMESECONDLIST = new List<GameCard>();
+        private List<StackPanel> _GAMEOBJECTS = new List<StackPanel>();
         private string[] _GAMETEXT =
         {
-            "First String",
-            "Second String",
-            "Third String",
-            "Foruth String",
-            "Fifth String",
-            "Sixth String"
+            "Russia",
+            "North Korea",
+            "Germany",
+            "France",
+            "China",
+            "USA"
+        };
+        private string[] _GAMEQUESTIONS =
+        {
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
         };
         public Game()
         {
             this.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\wwwroot\GUIH2\GUIH2\Media\map.jpg")));
+            _GAMEOBJECTS.Add(CreateStackPanel());
+            _GAMEOBJECTS.Add(CreateSecondStackPanel());
             InitializeComponent();
-            GameGrid.Children.Add(CreateStackPanel());
-            GameGrid.Children.Add(CreateSecondStackPanel());
+            foreach (StackPanel p in _GAMEOBJECTS)
+            {
+                GameGrid.Children.Add(p);
+            }
         }
 
         private void MoveIt(object sender, MouseButtonEventArgs e)
@@ -39,7 +53,7 @@ namespace GUIH2
         }
         private void AddGameCards()
         {
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 CharacterSelection CS = new CharacterSelection();
                 GameLabel GML = new GameLabel(_GAMETEXT[i], Brushes.White, Brushes.Black);
@@ -62,7 +76,7 @@ namespace GUIH2
             StackPanel stp = new StackPanel();
             stp.Orientation = Orientation.Vertical;
             AddGameCards();
-            foreach(GameCard GC in _GAMECARDLIST)
+            foreach (GameCard GC in _GAMECARDLIST)
             {
                 stp.Children.Add(GC.CreateCard(300, 200));
             }
@@ -79,6 +93,5 @@ namespace GUIH2
             }
             return stp;
         }
-
     }
 }

@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Game.xaml.cs">
+    <Compile Update="Game\Game.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Lobby\Lobby.xaml.cs">
@@ -15,7 +15,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Game.xaml">
+    <Page Update="Game\Game.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Lobby\Lobby.xaml">
