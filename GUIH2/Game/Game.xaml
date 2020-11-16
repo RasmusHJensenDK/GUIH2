@@ -93,6 +93,7 @@
             <Label></Label>
             <Button Name="CLOSESHOP" Width="200" Content="Close shop" Click="Exitshop"/>
         </StackPanel>
+        <Label FontSize="20" Foreground="White" Name="playername" Content="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10,270,0,0" Grid.Row="2" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

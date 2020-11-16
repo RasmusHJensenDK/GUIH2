@@ -14,21 +14,30 @@ namespace GUIH2
 {
     public partial class Game : Window
     {
-        private List<GameCard> _GAMECARDLIST = new List<GameCard>();
-        private List<StackPanel> _GAMEOBJECTS = new List<StackPanel>();
-        private Character character { get; set; }
         private Player _PLAYER { get; set; }
         public Game(Player player)
         {
-            this._PLAYER = player;
-            this.character = character;
             InitializeComponent();
-            this.GAMEUSERNAME.Content = player.GetUsername();
-            UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
-            UpdateCountryText();
-            SPShop.Visibility = Visibility.Hidden;
-            GAMEUSERIMAGE = _PLAYER.ReturnPlayerCharacter().returnImage();
 
+            UpdateCountryText();
+
+            this._PLAYER = player;
+            this.GAMEUSERNAME.Content = player.GetUsername().ToString();
+            SPShop.Visibility = Visibility.Hidden;
+
+            /// **** UPDATE BOTTOM BAR **** ///
+            UpdateItems(
+                _PLAYER.GetPlayerBombs(), 
+                _PLAYER.GetPlayerSoldiers(), 
+                _PLAYER.GetPlayerPlanes(),
+                _PLAYER.GetPlayerTanks()
+            );
+
+            GAMEUSERIMAGE = _PLAYER.ReturnPlayerCharacter().returnImage();
+            playername.Content = _PLAYER.ReturnPlayerCharacter().getName().ToString();
+            _PLAYER.ReturnPlayerCharacter().returnImageSource().ToString();
+
+            /// **** GAME MECHANICS **** ///
             LBLBRASIL.MouseEnter += MouseEnter;
             LBLCHINA.MouseEnter += MouseEnter;
             LBLEU.MouseEnter += MouseEnter;
@@ -65,6 +74,7 @@ namespace GUIH2
 
         private void ButtonSELLBOMB_Click(object sender, RoutedEventArgs e)
         {
+
         }
 
         private void ButtonSELLTANK_Click(object sender, RoutedEventArgs e)
