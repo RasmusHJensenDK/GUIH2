@@ -50,7 +50,8 @@ namespace GUIH2
 
         public void Stackpanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Game Game = new Game(_USERNAME, _CHARACTER);
+            Player player = new Player(_USERNAME, 500, _CHARACTER);
+            Game Game = new Game(player);
             Game.Show();
         }
 
