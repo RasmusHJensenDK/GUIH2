@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace GUIH2
 {
-    class Character
+    public class Character
     {
         private string Name { get; set; }
         private int life { get; set; }
@@ -42,6 +43,10 @@ namespace GUIH2
         public Image returnImage()
         {
             return image;
+        }
+        public ImageSource returnImageSource()
+        {
+            return image.Source;
         }
 
     }

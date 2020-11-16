@@ -10,6 +10,66 @@
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
     <Grid Name="GameGrid">
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\wwwroot\GUIH2\GUIH2\Media\map.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <GroupBox Name="GroupBoxUSA" Foreground="White" Header="USA" Margin="167,321,191,161" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <GroupBox Name="GroupBoxRussia" Foreground="White" Header="RUSSIA" Margin="109,125,249,35" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <GroupBox x:Name="GroupBoxNK" Foreground="White"  Header="NK" Margin="235,80,123,80" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="3"/>
+        <GroupBox x:Name="GroupBoxCHINA" Foreground="White"  Header="CHINA" Margin="10,321,60,161" Grid.Column="3" Grid.RowSpan="2"/>
+        <GroupBox x:Name="GroupBoxSA" Foreground="White" Header="South America" Margin="35,262,35,221" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
+        <GroupBox x:Name="GroupBoxEU" Foreground="White" Header="EU" Margin="0,241,70,242" Grid.Column="2" Grid.RowSpan="2"/>
+        <Rectangle Grid.ColumnSpan="2" Opacity="0.8" Fill="White" HorizontalAlignment="Left" Height="120" Margin="176,24,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="200"/>
+        <Rectangle Fill="White" Opacity="0.8" HorizontalAlignment="Left" Height="120" Margin="10,266,0,0" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Column="2" Grid.RowSpan="2"/>
+        <Rectangle Fill="White" Opacity="0.8" HorizontalAlignment="Center" Height="120" Margin="0,288,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.RowSpan="2"/>
+        <Rectangle Fill="White" Opacity="0.8" HorizontalAlignment="Left" Height="120" Margin="118,154,0,0" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Rectangle Fill="White" Opacity="0.8" HorizontalAlignment="Left" Height="120" Margin="19,24,0,0" Stroke="Black" VerticalAlignment="Top" Width="200" Grid.Column="3" Grid.Row="1"/>
+        <Rectangle Fill="White" Opacity="0.8" HorizontalAlignment="Left" Height="120" Margin="244,10,0,0" Stroke="Black" VerticalAlignment="Center" Width="200" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Rectangle Fill="Gray" Opacity="0.8" HorizontalAlignment="Left" Height="161" Margin="0,160,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="1460" Grid.ColumnSpan="5"/>
+        <Label Content="WORLD MAP" Background="RED" Opacity="0.8" Foreground="white" FontSize="40" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,10,17,0" VerticalAlignment="Top" Height="66" Width="1406" Grid.ColumnSpan="5"/>
+        <Label Content="_USERNAME" Name="GAMEUSERNAME" Foreground="White" HorizontalContentAlignment="center" FontSize="28" HorizontalAlignment="Left" Margin="0,170,0,0" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="278" Grid.Column="2"/>
+        <Image Name="GAMEUSERIMAGE" Grid.Column="2" HorizontalAlignment="Left" Height="74" Margin="154,222,0,0" Grid.Row="2" VerticalAlignment="Top" Width="98"/>
+        <Rectangle Opacity="0.7" Fill="white" HorizontalAlignment="Center" Height="141" Margin="0,170,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="266"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\Rockets.png" Height="100" Margin="167,214,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Atomic Bombs" FontSize="20" HorizontalAlignment="Center" Margin="0,172,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label Content="0" Name="NBQuantity" HorizontalAlignment="Left" FontSize="40" Margin="60,214,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Rectangle Opacity="0.7" Fill="white" HorizontalAlignment="Center" Height="141" Margin="0,170,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="266" Grid.Column="1"/>
+        <Rectangle Fill="white" Opacity="0.7" HorizontalAlignment="Center" Height="141" Margin="0,170,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="266" Grid.Column="3"/>
+        <Rectangle Fill="white" Opacity="0.7" HorizontalAlignment="Center" Height="141" Margin="0,170,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="266" Grid.Column="4"/>
+        <Label Content="CASH" Foreground="white" FontSize="20" HorizontalAlignment="Left" Margin="10,222,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="2"/>
+        <Label Content="0" Name="GAMECASHLABEL" Foreground="white" FontSize="20" HorizontalAlignment="Left" Margin="79,222,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="2"/>
+        <Label Content="Soldiers" FontSize="20" HorizontalAlignment="Center" Margin="0,172,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Planes" FontSize="20" HorizontalAlignment="Center" Margin="0,172,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="3"/>
+        <Label Content="Tanks" FontSize="20" HorizontalAlignment="Center" Margin="0,172,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="4"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\pngegg.png" Height="100" Margin="168,208,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\clipart2231689.png" Height="100" Margin="168,222,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Grid.Column="3"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\bobobo.png" Height="109" Margin="144,213,0,0" Grid.Row="2" VerticalAlignment="Top" Width="133" Grid.Column="4"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\USA.png" Height="85" Margin="276,45,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\EU.png" Height="84" Margin="124,284,0,0" VerticalAlignment="Top" Width="87" Grid.Column="2" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\BRASIL.png" Height="84" Margin="144,312,0,0" VerticalAlignment="Top" Width="87" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\CHINA.png" Height="84" Margin="119,45,0,0" VerticalAlignment="Top" Width="87" Grid.Column="3" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\Media\thisPutini.png" Height="104" Margin="234,161,0,0" VerticalAlignment="Top" Width="99" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\NK.png" Height="104" Margin="45,117,0,0" VerticalAlignment="Top" Width="99" Grid.Column="4" Grid.Row="1"/>
+        <Label Name="LBLUSA" Content="LBLUSA" Margin="176,24,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.ColumnSpan="2" Height="112"/>
+        <Label Content="0" x:Name="GAMEUSERSOLDIERS" HorizontalAlignment="Left" FontSize="40" Margin="65,214,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="0" x:Name="GAMEUSERPLANES" HorizontalAlignment="Left" FontSize="40" Margin="87,214,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="3"/>
+        <Label Content="0" x:Name="GAMEUSERTANKS" HorizontalAlignment="Left" FontSize="40" Margin="56,218,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Name="LBLBRASIL" Content="LBLBRASIL" Margin="0,297,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" Height="102" Grid.Column="1" Grid.RowSpan="2"/>
+        <Label Name="LBLEU" Content="LBLEU" Margin="16,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="191" Height="110" Grid.Column="2" Grid.RowSpan="2"/>
+        <Label Name="LBLCHINA" Content="LBLCHINA" Margin="27,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="191" Height="102" Grid.Column="3" Grid.Row="1"/>
+        <Label Name="LBLRUSSIA" Content="LBLRUSSIA" Margin="119,163,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199" Height="102" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Label Name="LBLNK" Content="LBLNK" Margin="254,115,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="178" Height="102" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1"/>
     </Grid>
 </Window>

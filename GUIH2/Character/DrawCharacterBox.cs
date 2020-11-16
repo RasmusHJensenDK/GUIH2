@@ -14,10 +14,19 @@ namespace GUIH2
         private Character _CHARACTER { get; set; }
         private string _SRC { get; set; }
         private Brush stackColor { get; set; }
+        private Lobby myParent;
+        private string _USERNAME { get; set; }
         public DrawCharacterBox(Character character, string src)
         {
             this._SRC = src;
             this._CHARACTER = character; 
+        }
+        public DrawCharacterBox(Character character, string src, Lobby parent)
+        {
+            this._SRC = src;
+            this._CHARACTER = character;
+            myParent = parent;
+            _USERNAME = myParent.GetUsername();
         }
         public StackPanel StackView(double left, double top, double right, double bottom)
         {
@@ -36,13 +45,12 @@ namespace GUIH2
             stackpanel.Children.Add(DrawPicture());
             stackpanel.Children.Add(DrawInformation());
             stackpanel.MouseDown += Stackpanel_MouseDown;
-
             return stackpanel;
         }
 
         public void Stackpanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Game Game = new Game();
+            Game Game = new Game(_USERNAME, _CHARACTER);
             Game.Show();
         }
 
@@ -79,7 +87,7 @@ namespace GUIH2
             {
                 Width = 200,
                 Height = 400,
-                Margin = new System.Windows.Thickness(0, -130, 0, 0)
+                Margin = new System.Windows.Thickness(0, -100, 0, 0)
             };
             characterImg.Source = new BitmapImage(new Uri(_SRC));
             return characterImg;
@@ -90,7 +98,7 @@ namespace GUIH2
             Label lblCharacter = new Label();
             lblCharacter.Content = _CHARACTER.getName();
             lblCharacter.FontSize = 20;
-            lblCharacter.Margin = new System.Windows.Thickness(90, 0, 0, 0);
+            lblCharacter.Margin = new System.Windows.Thickness(70, 0, 0, 0);
             return lblCharacter;
         }
         public Label DrawInformation()

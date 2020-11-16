@@ -15,37 +15,20 @@ namespace GUIH2
     public partial class Lobby : Window
     {
         private string username { get; set; }
-        Menu menu = new Menu();
-        CharacterSelection CS = new CharacterSelection();
-
         public Lobby(string username)
         {
             this.username = username;
             this.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\wwwroot\GUIH2\GUIH2\Media\522618.jpg")));
             InitializeComponent();
-            //this.LoadMenu();
-            LoadCharacterSelection();
+            Menu menu = new Menu(this);
         }
         private void DragAble(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left) this.DragMove();
         }
-        private void LoadMenu()
+        public string GetUsername()
         {
-            foreach(Label lbl in menu.returnLabels())
-            {
-                LobbyGrid.Children.Add(lbl);
-            }
-        }
-
-        public void LoadCharacterSelection()
-        {
-            int i = 0;
-            foreach(DrawCharacterBox DCB in menu.returnDCBList())
-            {
-                LobbyGrid.Children.Add(DCB.StackView(-550 + i, 0, 0, 0));
-                i = i + 550;
-            }
+            return username;
         }
     }
 }

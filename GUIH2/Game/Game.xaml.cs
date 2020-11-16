@@ -15,83 +15,51 @@ namespace GUIH2
     public partial class Game : Window
     {
         private List<GameCard> _GAMECARDLIST = new List<GameCard>();
-        private List<GameCard> _GAMESECONDLIST = new List<GameCard>();
         private List<StackPanel> _GAMEOBJECTS = new List<StackPanel>();
-        private string[] _GAMETEXT =
+        private Character character { get; set; }
+        public Game(string username, Character CH)
         {
-            "Russia",
-            "North Korea",
-            "Germany",
-            "France",
-            "China",
-            "USA"
-        };
-        private string[] _GAMEQUESTIONS =
-        {
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        };
-        public Game()
-        {
-            this.Background = new ImageBrush(new BitmapImage(new Uri(@"C:\wwwroot\GUIH2\GUIH2\Media\map.jpg")));
-            _GAMEOBJECTS.Add(CreateStackPanel());
-            _GAMEOBJECTS.Add(CreateSecondStackPanel());
+            this.character = character;
             InitializeComponent();
-            foreach (StackPanel p in _GAMEOBJECTS)
-            {
-                GameGrid.Children.Add(p);
-            }
+            this.GAMEUSERNAME.Content = username.ToString();
+            UpdateItems(0, 50, 2, 5);
+            UpdateCountryText();
+            //GAMEUSERIMAGE = character.returnImage();
+
+            LBLBRASIL.MouseEnter += MouseEnter;
+            LBLCHINA.MouseEnter += MouseEnter;
+            LBLEU.MouseEnter += MouseEnter;
+            LBLNK.MouseEnter += MouseEnter;
+            LBLRUSSIA.MouseEnter += MouseEnter;
+            LBLUSA.MouseEnter += MouseEnter;
+
+        }
+        private new void MouseEnter(object sender, MouseEventArgs e)
+        {
+            Label lbl = (Label)sender;
+            lbl.Cursor = Cursors.Hand;
         }
 
         private void MoveIt(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left) this.DragMove();
         }
-        private void AddGameCards()
+        public void UpdateItems(int bombs, int soldiers, int planes, int tanks)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                CharacterSelection CS = new CharacterSelection();
-                GameLabel GML = new GameLabel(_GAMETEXT[i], Brushes.White, Brushes.Black);
-                GameCard GameCard = new GameCard(CS.returnCharacter(0), GML);
-                _GAMECARDLIST.Add(GameCard);
-            }
+            PlayerItems _PLAYERITEMS = new PlayerItems(bombs, soldiers, planes, tanks);
+            this.NBQuantity.Content = _PLAYERITEMS.ReturnBombs().ToString();
+            this.GAMEUSERSOLDIERS.Content = _PLAYERITEMS.ReturnSoldiers().ToString();
+            this.GAMEUSERPLANES.Content = _PLAYERITEMS.ReturnPlanes().ToString();
+            this.GAMEUSERTANKS.Content = _PLAYERITEMS.ReturnTanks().ToString();
         }
-        private void AddSecondGameCards()
+        public void UpdateCountryText()
         {
-            for (int i = 0; i < 3; i++)
-            {
-                CharacterSelection CS = new CharacterSelection();
-                GameLabel GML = new GameLabel(_GAMETEXT[i], Brushes.White, Brushes.Black);
-                GameCard GameCard = new GameCard(CS.returnCharacter(0), GML);
-                _GAMESECONDLIST.Add(GameCard);
-            }
-        }
-        private StackPanel CreateStackPanel()
-        {
-            StackPanel stp = new StackPanel();
-            stp.Orientation = Orientation.Vertical;
-            AddGameCards();
-            foreach (GameCard GC in _GAMECARDLIST)
-            {
-                stp.Children.Add(GC.CreateCard(300, 200));
-            }
-            return stp;
-        }
-        private StackPanel CreateSecondStackPanel()
-        {
-            StackPanel stp = new StackPanel();
-            stp.Orientation = Orientation.Horizontal;
-            AddSecondGameCards();
-            foreach (GameCard GC in _GAMESECONDLIST)
-            {
-                stp.Children.Add(GC.CreateCard(300, 200));
-            }
-            return stp;
+            this.LBLUSA.Content = "A good place \n to buy a good \n piece of weapon \n equipment. Best buys \n of Atomic bombs and tanks.";
+            this.LBLCHINA.Content = "If you want \n high tech, \n dont go here!\n But if you want \n many men \n go here!";
+            this.LBLEU.Content = "Before doing \n anything, be sure to \n setup a meeting, and \n wait ages for \n the democratic \n process.";
+            this.LBLNK.Content = "Rocket man eh? \n NK only buys \n bombs, and do \n not distripute \n but if you want a virus \n they can sure help!";
+            this.LBLRUSSIA.Content = "NASTROVIA COMRADE! \n Atomic bombs, \n a million men, \n tanks, planes \n mother russia has it all.";
+            this.LBLBRASIL.Content = "You know \n Eddie Guerro? \n FIST FIGHT \n YOUR WAY \n To Victory! \n or get the cartels.";
         }
     }
 }

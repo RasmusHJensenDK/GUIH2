@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -16,11 +17,23 @@ namespace GUIH2
         private List<Label> menuLabels = new List<Label>();
         private List<DrawCharacterBox> characterBoxes = new List<DrawCharacterBox>();
         private Brush labelColor { get; set; }
+        private Lobby myParent;
 
         public Menu()
         {
             LoadCharacters();
             DrawMenu();
+        }
+        public Menu(Lobby parent)
+        {   
+            DrawMenu();
+            myParent = parent;
+            LoadCharacters();
+            foreach (Label lbl in returnLabels())
+            {
+                myParent.LobbyGrid.Children.Add(lbl);
+            }
+         
         }
         public void DrawMenu()
         {
@@ -56,9 +69,15 @@ namespace GUIH2
             {
                if(labelDown.Content.ToString() == "New Game")
                 {
-                    
+                    myParent.LobbyGrid.Children.Clear();
+                    int k = 0;
+                    foreach(DrawCharacterBox DCB in returnDCBList())
+                    {
+                        myParent.LobbyGrid.Children.Add(DCB.StackView(-550 + k, 0, 0, 0));
+                        k = k + 550;
+                    }
                 }
-               if(labelDown.Content.ToString() == "Resume Game")
+                if (labelDown.Content.ToString() == "Resume Game")
                 {
                     
                 }
@@ -68,7 +87,6 @@ namespace GUIH2
                 }
                 if (labelDown.Content.ToString() == "Exit")
                 {
-
                 }
             }
         }
@@ -104,8 +122,9 @@ namespace GUIH2
             CharacterSelection CS = new CharacterSelection();
             foreach (Character characters in CS.returnCharacterlist())
             {
-                DrawCharacterBox DCB = new DrawCharacterBox(CS.returnCharacter(i), CS.returnCharacterImageUri(i));
+                DrawCharacterBox DCB = new DrawCharacterBox(CS.returnCharacter(i), CS.returnCharacterImageUri(i), myParent);
                 characterBoxes.Add(DCB);
+                i++;
             }
         }
     }
