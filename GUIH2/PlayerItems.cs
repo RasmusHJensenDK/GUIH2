@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GUIH2
 {
-    class PlayerItems
+    public class PlayerItems
     {
         private int _NUCLEARBOMBS { get; set; }
         private int _SOLDIERS { get; set; }

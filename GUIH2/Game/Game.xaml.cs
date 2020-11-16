@@ -18,24 +18,16 @@ namespace GUIH2
         private List<StackPanel> _GAMEOBJECTS = new List<StackPanel>();
         private Character character { get; set; }
         private Player _PLAYER { get; set; }
-        private int _PLAYERBOMBS { get; set; }
-        private int _PLAYERPLANES { get; set; }
-        private int _PLAYERTANKS { get; set; }
-        private int _PLAYERSOLDIERS { get; set; }
         public Game(Player player)
         {
-            _PLAYERBOMBS = 0;
-            _PLAYERSOLDIERS = 50;
-            _PLAYERPLANES = 2;
-            _PLAYERTANKS = 5;
             this._PLAYER = player;
             this.character = character;
             InitializeComponent();
             this.GAMEUSERNAME.Content = player.GetUsername();
-            UpdateItems(_PLAYERBOMBS, _PLAYERSOLDIERS, _PLAYERPLANES, _PLAYERTANKS);
+            UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
             UpdateCountryText();
             SPShop.Visibility = Visibility.Hidden;
-            //GAMEUSERIMAGE = character.returnImage();
+            GAMEUSERIMAGE = _PLAYER.ReturnPlayerCharacter().returnImage();
 
             LBLBRASIL.MouseEnter += MouseEnter;
             LBLCHINA.MouseEnter += MouseEnter;
@@ -58,64 +50,36 @@ namespace GUIH2
             LBLRUSSIA.MouseDown += ShowShop;
             LBLUSA.MouseDown += ShowShop;
 
-            BUYBOMB.MouseDown += BUYBOMB_MouseDown;
-            BUYPLANE.MouseDown += BUYPLANE_MouseDown;
-            BUYSOLDIER.MouseDown += BUYSOLDIER_MouseDown;
-            BUYTANK.MouseDown += BUYTANK_MouseDown;
+            bBUYBOMB.Click += BUYBOMB;
+            buttonBUYSOLDIER.Click += bBUYSOLDIER;
+            buttonBUYPLANE.Click += bBUYPLANE;
+            buttonBUYTANK.Click += bBUYTANK;
 
-            CLOSESHOP.MouseDown += ExitShop;
+            CLOSESHOP.MouseDown += Exitshop;
 
+            buttonSELLPLANE.Click += ButtonSELLPLANE_Click;
+            buttonSELLSOLDIER.Click += ButtonSELLSOLDIER_Click;
+            buttonSELLTANK.Click += ButtonSELLTANK_Click;
+            buttonSELLBOMB.Click += ButtonSELLBOMB_Click;
         }
 
-        private void BUYTANK_MouseDown(object sender, MouseButtonEventArgs e)
+        private void ButtonSELLBOMB_Click(object sender, RoutedEventArgs e)
         {
-            if(_PLAYER.ReturnPlayerCash() > 2000)
-            {
-                _PLAYER.SetPlayerCash(2000);
-                UpdateItems(_PLAYERBOMBS, _PLAYERSOLDIERS, _PLAYERPLANES, _PLAYERTANKS + 1);
-            }
-            else
-            {
-                //Alert player not enough cash!
-            }
         }
 
-        private void BUYSOLDIER_MouseDown(object sender, MouseButtonEventArgs e)
+        private void ButtonSELLTANK_Click(object sender, RoutedEventArgs e)
         {
-            if (_PLAYER.ReturnPlayerCash() > 500)
-            {
-                _PLAYER.SetPlayerCash(500);
-                UpdateItems(_PLAYERBOMBS, _PLAYERSOLDIERS + 1, _PLAYERPLANES, _PLAYERTANKS);
-            }
-            else
-            {
-                //Alert player not enough cash!
-            }
+            throw new NotImplementedException();
         }
 
-        private void BUYPLANE_MouseDown(object sender, MouseButtonEventArgs e)
+        private void ButtonSELLSOLDIER_Click(object sender, RoutedEventArgs e)
         {
-            if (_PLAYER.ReturnPlayerCash() > 2500)
-            {
-                _PLAYER.SetPlayerCash(2500);
-                UpdateItems(_PLAYERBOMBS, _PLAYERSOLDIERS, _PLAYERPLANES + 1, _PLAYERTANKS);
-            }
-            else
-            {
-                //Alert player not enough cash!
-            }
+            throw new NotImplementedException();
         }
 
-        private void BUYBOMB_MouseDown(object sender, MouseButtonEventArgs e)
+        private void ButtonSELLPLANE_Click(object sender, RoutedEventArgs e)
         {
-            if (_PLAYER.ReturnPlayerCash() > 12000)
-            {
-                _PLAYER.SetPlayerCash(12000);
-                UpdateItems(_PLAYERBOMBS + 1, _PLAYERSOLDIERS, _PLAYERPLANES, _PLAYERTANKS);
-            } else
-            {
-                //Alert player not enough cash!
-            }
+            throw new NotImplementedException();
         }
 
         private void ShowShop(object sender, MouseButtonEventArgs e)
@@ -207,9 +171,65 @@ namespace GUIH2
             this.LBLBRASIL.Content = "You know \n Eddie Guerro? \n FIST FIGHT \n YOUR WAY \n To Victory! \n or get the cartels.";
         }
 
-        private void ExitShop(object sender, MouseButtonEventArgs e)
+        private void Exitshop(object sender, RoutedEventArgs e)
         {
             SPShop.Visibility = Visibility.Hidden;
+        }
+
+        private void BUYBOMB(object sender, RoutedEventArgs e)
+        {
+            if (_PLAYER.ReturnPlayerCash() > 29999)
+            {
+                _PLAYER.SetPlayerCash(30000);
+                _PLAYER.SetPlayerBombs(_PLAYER.GetPlayerBombs() + 1);
+                UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
+            }
+            else
+            {
+                //Alert player not enough cash!
+            }
+        }
+
+        private void bBUYSOLDIER(object sender, RoutedEventArgs e)
+        {
+            if (_PLAYER.ReturnPlayerCash() > 499)
+            {
+                _PLAYER.SetPlayerCash(500);
+                _PLAYER.SetPlayerSoldiers(_PLAYER.GetPlayerSoldiers() + 1);
+                UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
+            }
+            else
+            {
+                //Alert player not enough cash!
+            }
+        }
+
+        private void bBUYPLANE(object sender, RoutedEventArgs e)
+        {
+            if (_PLAYER.ReturnPlayerCash() > 2499)
+            {
+                _PLAYER.SetPlayerCash(2500);
+                _PLAYER.SetPlayerPlanes(_PLAYER.GetPlayerPlanes() + 1);
+                UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
+            }
+            else
+            {
+                //Alert player not enough cash!
+            }
+        }
+
+        private void bBUYTANK(object sender, RoutedEventArgs e)
+        {
+            if (_PLAYER.ReturnPlayerCash() > 2000)
+            {
+                _PLAYER.SetPlayerCash(2000);
+                _PLAYER.SetPlayerTanks(_PLAYER.GetPlayerTanks() + 1);
+                UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
+            }
+            else
+            {
+                //Alert player not enough cash!
+            }
         }
     }
 }

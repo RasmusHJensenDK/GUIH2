@@ -44,7 +44,7 @@
         <Rectangle Opacity="0.7" Fill="white" HorizontalAlignment="Center" Height="141" Margin="0,170,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="266"/>
         <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\Rockets.png" Height="100" Margin="167,214,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100"/>
         <Label Content="Atomic Bombs" FontSize="20" HorizontalAlignment="Center" Margin="0,172,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <Label Content="0" Name="NBQuantity" HorizontalAlignment="Left" FontSize="40" Margin="60,214,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label Content="0" Name="NBQuantity" HorizontalAlignment="Left" FontSize="40" Margin="36,214,0,0" Grid.Row="2" VerticalAlignment="Top" Width="56"/>
         <Rectangle Opacity="0.7" Fill="white" HorizontalAlignment="Center" Height="141" Margin="0,170,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="266" Grid.Column="1"/>
         <Rectangle Fill="white" Opacity="0.7" HorizontalAlignment="Center" Height="141" Margin="0,170,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="266" Grid.Column="3"/>
         <Rectangle Fill="white" Opacity="0.7" HorizontalAlignment="Center" Height="141" Margin="0,170,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="266" Grid.Column="4"/>
@@ -63,34 +63,35 @@
         <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\Media\thisPutini.png" Height="104" Margin="234,161,0,0" VerticalAlignment="Top" Width="99" Grid.Column="3" Grid.ColumnSpan="2"/>
         <Image HorizontalAlignment="Left" Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\NK.png" Height="104" Margin="45,117,0,0" VerticalAlignment="Top" Width="99" Grid.Column="4" Grid.Row="1"/>
         <Label Name="LBLUSA" Foreground="White" Content="LBLUSA" Margin="176,24,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.ColumnSpan="2" Height="112"/>
-        <Label Content="0" x:Name="GAMEUSERSOLDIERS" HorizontalAlignment="Left" FontSize="40" Margin="65,214,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="0" x:Name="GAMEUSERPLANES" HorizontalAlignment="Left" FontSize="40" Margin="87,214,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="3"/>
-        <Label Content="0" x:Name="GAMEUSERTANKS" HorizontalAlignment="Left" FontSize="40" Margin="56,218,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="4"/>
+        <Label Content="0" x:Name="GAMEUSERSOLDIERS" HorizontalAlignment="Left" FontSize="40" Margin="44,214,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="1" Width="53"/>
+        <Label Content="0" x:Name="GAMEUSERPLANES" HorizontalAlignment="Left" FontSize="40" Margin="45,214,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="3" Width="74"/>
+        <Label Content="0" x:Name="GAMEUSERTANKS" HorizontalAlignment="Left" FontSize="40" Margin="45,218,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="4" Width="43"/>
         <Label Foreground="White" Name="LBLBRASIL" Content="LBLBRASIL" Margin="0,297,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" Height="102" Grid.Column="1" Grid.RowSpan="2"/>
         <Label Foreground="White" Name="LBLEU" Content="LBLEU" Margin="16,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="191" Height="110" Grid.Column="2" Grid.RowSpan="2"/>
         <Label Foreground="White" Name="LBLCHINA" Content="LBLCHINA" Margin="27,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="191" Height="102" Grid.Column="3" Grid.Row="1"/>
         <Label Foreground="White" Name="LBLRUSSIA" Content="LBLRUSSIA" Margin="119,163,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199" Height="102" Grid.Column="3" Grid.ColumnSpan="2"/>
         <Label Foreground="White" Name="LBLNK" Content="LBLNK" Margin="254,115,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="178" Height="102" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1"/>
         <Button Content="GO TO WAR" Background="Red" BorderBrush="Gray" BorderThickness="4" Foreground="Yellow" FontWeight="Bold" FontSize="20" Grid.Column="2" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="2" VerticalAlignment="Top" Height="55" Width="208"/>
-        <StackPanel Opacity="0.9" Name="SPShop" Background="white" Grid.ColumnSpan="3" Margin="185,125,185,166" Grid.RowSpan="3" Grid.Column="1">
+        <StackPanel Opacity="0.9" Name="SPShop" Visibility="Visible" Background="white" Grid.ColumnSpan="3" Margin="185,84,185,166" Grid.RowSpan="3" Grid.Column="1">
             <Image Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\Rockets.png" Height="100" Width="100"/>
-            <Label Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 12000 USD"/>
-            <Button Name="BUYBOMB" Width="200" Content="Buy Atomic Bomb"/>
+            <Label Foreground="black" HorizontalContentAlignment="center" Content="Cost pr unit: 12000 USD | Sell pr unit: 9400 USD "/>
+            <Button Name="bBUYBOMB" Width="200" Content="Buy Atomic Bomb" Click="BUYBOMB"/>
+            <Button Name="buttonSELLBOMB" Width="200" Content="Sell Atomic Bomb"/>
             <Image Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\pngegg.png" Height="100" Width="100"/>
             <Label Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 500 USD"/>
-            <Button Name="BUYSOLDIER" Width="200" Content="Buy Soldiers"/>
+            <Button Name="buttonBUYSOLDIER" Width="200" Content="Buy Soldiers" Click="bBUYSOLDIER"/>
+            <Button Name="buttonSELLSOLDIER" Width="200" Content="Sell Soldiers"/>
             <Image Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\clipart2231689.png" Height="100" Width="100"/>
             <Label Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 2500 USD"/>
-            <Button Name="BUYPLANE" Width="200" Content="Buy Planes"/>
+            <Button Name="buttonBUYPLANE" Width="200" Content="Buy Planes" Click="bBUYPLANE"/>
+            <Button Name="buttonSELLPLANE" Width="200" Content="Sell Planes"/>
             <Image Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\bobobo.png" Height="100" Width="100"/>
             <Label Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 2000 USD"/>
-            <Button Name="BUYTANK" Width="200" Content="Buy Tanks"/>
+            <Button Name="buttonBUYTANK" Width="200" Content="Buy Tanks" Click="bBUYTANK"/>
+            <Button Name="buttonSELLTANK" Width="200" Content="Sell Tanks"/>
             <Label></Label>
             <Label></Label>
-            <Label></Label>
-            <Label></Label>
-            <Label></Label>
-            <Button Name="CLOSESHOP" Width="200" Content="Close shop" MouseDown="ExitShop"/>
+            <Button Name="CLOSESHOP" Width="200" Content="Close shop" Click="Exitshop"/>
         </StackPanel>
 
     </Grid>

@@ -11,14 +11,15 @@ namespace GUIH2
         private Character playerCharacter { get; set; }
         private Image playerImage { get; set; }
         private int _PLAYERCASH { get; set; }
-        public Player(string playerName, int playercash, Character playerCharacter)
+        private PlayerItems playeritems;
+        public Player(string playerName, int playercash, Character playerCharacter, PlayerItems PI)
         {
             this._PLAYERCASH = playercash;
             this.playerName = playerName;
             this.playerCharacter = playerCharacter;
+            this.playeritems = PI;
             this.playerImage = playerCharacter.returnImage();
         }
-
         public string GetUsername()
         {
             return playerName;
@@ -35,5 +36,69 @@ namespace GUIH2
         {
             _PLAYERCASH = _PLAYERCASH + pluscash;
         }
+        public void SetPlayerBombs(int i)
+        {
+            if (i < 0)
+            {
+                playeritems.SetNuclearBombs(playeritems.ReturnBombs() - i);
+            }
+            if (i > 0)
+            {
+                playeritems.SetNuclearBombs(playeritems.ReturnBombs() + i);
+            }
+        }
+        public void SetPlayerPlanes(int i)
+        {
+            if(i < 0)
+            {
+                playeritems.SetPlanes(playeritems.ReturnPlanes() - i);
+            } 
+            if(i > 0)
+            {
+                playeritems.SetPlanes(playeritems.ReturnPlanes() + i);
+            }
+        }
+        public void SetPlayerSoldiers(int i)
+        {
+            if (i < 0)
+            {
+                playeritems.SetSoldiers(playeritems.ReturnSoldiers() - i);
+            }
+            if (i > 0)
+            {
+                playeritems.SetSoldiers(playeritems.ReturnSoldiers() + i);
+            }
+        }
+        public void SetPlayerTanks(int i)
+        {
+            if (i < 0)
+            {
+                playeritems.SetTanks(playeritems.ReturnTanks() - i);
+            }
+            if (i > 0)
+            {
+                playeritems.SetTanks(playeritems.ReturnTanks() + i);
+            }
+        }
+        public int GetPlayerBombs()
+        {
+            return playeritems.ReturnBombs();
+        }
+        public int GetPlayerTanks()
+        {
+            return playeritems.ReturnTanks();
+        }
+        public int GetPlayerPlanes()
+        {
+            return playeritems.ReturnPlanes();
+        }
+        public int GetPlayerSoldiers()
+        {
+            return playeritems.ReturnSoldiers();
+        }
+        public Character ReturnPlayerCharacter()
+        {
+            return playerCharacter;
+        }  
     }
 }
