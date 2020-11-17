@@ -36,49 +36,21 @@ namespace GUIH2
         {
             _PLAYERCASH = _PLAYERCASH + pluscash;
         }
-        public void SetPlayerBombs(int i)
+        public void AddPlayerBombs(int i)
         {
-            if (i < 0)
-            {
-                playeritems.SetNuclearBombs(playeritems.ReturnBombs() - i);
-            }
-            if (i > 0)
-            {
-                playeritems.SetNuclearBombs(playeritems.ReturnBombs() + i);
-            }
+            playeritems.SetNuclearBombs(playeritems.ReturnBombs() + i);
         }
-        public void SetPlayerPlanes(int i)
+        public void AddPlayerPlanes(int i)
         {
-            if(i < 0)
-            {
-                playeritems.SetPlanes(playeritems.ReturnPlanes() - i);
-            } 
-            if(i > 0)
-            {
-                playeritems.SetPlanes(playeritems.ReturnPlanes() + i);
-            }
+            playeritems.SetPlanes(playeritems.ReturnPlanes() + i);
         }
-        public void SetPlayerSoldiers(int i)
+        public void AddPlayerSoldiers(int i)
         {
-            if (i < 0)
-            {
-                playeritems.SetSoldiers(playeritems.ReturnSoldiers() - i);
-            }
-            if (i > 0)
-            {
-                playeritems.SetSoldiers(playeritems.ReturnSoldiers() + i);
-            }
+            playeritems.SetSoldiers(playeritems.ReturnSoldiers() + i);
         }
-        public void SetPlayerTanks(int i)
+        public void AddPlayerTanks(int i)
         {
-            if (i < 0)
-            {
-                playeritems.SetTanks(playeritems.ReturnTanks() - i);
-            }
-            if (i > 0)
-            {
-                playeritems.SetTanks(playeritems.ReturnTanks() + i);
-            }
+            playeritems.SetTanks(playeritems.ReturnTanks() + i);
         }
         public int GetPlayerBombs()
         {
@@ -99,6 +71,22 @@ namespace GUIH2
         public Character ReturnPlayerCharacter()
         {
             return playerCharacter;
-        }  
+        }
+        public void SellPlayerBomb(int i)
+        {
+            playeritems.SetNuclearBombs(playeritems.ReturnBombs() - i);
+        }
+        public void SellPlayerSoldier(int i)
+        {
+            playeritems.SetSoldiers(playeritems.ReturnSoldiers() - i);
+        }
+        public void SellPlayerPlanes(int i)
+        {
+            playeritems.SetPlanes(playeritems.ReturnPlanes() - i);
+        }
+        public void SellPlayerTanks(int i)
+        {
+            playeritems.SetTanks(playeritems.ReturnTanks() - i);
+        }
     }
 }

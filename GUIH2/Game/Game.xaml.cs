@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,12 +16,19 @@ namespace GUIH2
     public partial class Game : Window
     {
         private Player _PLAYER { get; set; }
+        private double _TANKPRICE { get; set; }
+        private double _PLANEPRICE { get; set; }
+        private double _SOLDIERPRICE { get; set; }
+        private double _BOMBPRICE { get; set; }
+        private double _TANKSELLPRICE { get; set; }
+        private double _PLANESELLPRICE { get; set; }
+        private double _SOLDIERSELLPRICE { get; set; }
+        private double _BOMBSELLRPICE { get; set; }
         public Game(Player player)
         {
             InitializeComponent();
 
             UpdateCountryText();
-
             this._PLAYER = player;
             this.GAMEUSERNAME.Content = player.GetUsername().ToString();
             SPShop.Visibility = Visibility.Hidden;
@@ -72,32 +80,97 @@ namespace GUIH2
             buttonSELLBOMB.Click += ButtonSELLBOMB_Click;
         }
 
+        private void UpdatePrices(double sell, double buy)
+        {
+            Prices prices = new Prices();
+            int i = 0;
+            int k = 0;
+            double[] gear = { _PLANEPRICE, _BOMBPRICE, _SOLDIERPRICE, _TANKPRICE };
+            double[] gearSell = { _PLANESELLPRICE, _BOMBSELLRPICE, _SOLDIERSELLPRICE, _TANKPRICE };
+            foreach (double d in prices.ReturnPrices(buy))
+            {
+                gear[i] = d;
+                i++;
+            }
+            _PLANEPRICE = gear[0];
+            _BOMBPRICE = gear[1];
+            _SOLDIERPRICE = gear[2];
+            _TANKPRICE = gear[3];
+            foreach(double d in prices.ReturnSellprices(sell))
+            {
+                gearSell[k] = d;
+                k++;
+            }
+            _PLANESELLPRICE = gearSell[0];
+            _BOMBSELLRPICE = gearSell[1];
+            _SOLDIERSELLPRICE = gearSell[2];
+            _TANKSELLPRICE = gearSell[3];
+
+            lblBombPrice.Content = "Price: " +_BOMBPRICE + " | Sell Price: " + _BOMBSELLRPICE;
+            lblplaneprice.Content = "Price: " + _PLANEPRICE + " | Sell Price: " + _PLANESELLPRICE;
+            lblSoldierprice.Content = "Price: " + _SOLDIERPRICE + " | Sell Price: " + _SOLDIERSELLPRICE;
+            lblTankprice.Content = "Price: " + _TANKPRICE + " | Sell Price: " + _TANKSELLPRICE;
+
+        }
+
         private void ButtonSELLBOMB_Click(object sender, RoutedEventArgs e)
         {
-
+            _PLAYER.UpdatePlayerCash(9400);
+            _PLAYER.SellPlayerBomb(1);
+            UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
         }
 
         private void ButtonSELLTANK_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            _PLAYER.UpdatePlayerCash(1900);
+            _PLAYER.SellPlayerTanks(1);
+            UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
         }
 
         private void ButtonSELLSOLDIER_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            _PLAYER.UpdatePlayerCash(400);
+            _PLAYER.SellPlayerSoldier(1);
+            UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
         }
 
         private void ButtonSELLPLANE_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            _PLAYER.UpdatePlayerCash(2100);
+            _PLAYER.SellPlayerPlanes(1);
+            UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
         }
 
         private void ShowShop(object sender, MouseButtonEventArgs e)
         {
             Label lbldown = (Label)sender;
             SPShop.Visibility = Visibility.Visible;
-            GameShop GS = new GameShop();
-            SPShop.Children.Add(GS.DrawShop(lbldown.Name.ToString()));
+
+            if(lbldown.Name.ToString() == "LBLUSA")
+            {
+                UpdatePrices(1.1, 0.6);
+            }
+            if(lbldown.Name.ToString() == "LBLBRASIL")
+            {
+                UpdatePrices(0.5, 0.9);
+            }
+            if (lbldown.Name.ToString() == "LBLEU")
+            {
+                UpdatePrices(1.5, 1.2);
+            }
+            if (lbldown.Name.ToString() == "LBLCHINA")
+            {
+                UpdatePrices(0.6, 0.4);
+            }
+            if (lbldown.Name.ToString() == "LBLRUSSIA")
+            {
+                UpdatePrices(0.8, 0.6);
+            }
+            if (lbldown.Name.ToString() == "LBLNK")
+            {
+                UpdatePrices(1.9, 0.6);
+            }
+
         }
 
         private new void MouseLeave(object sender, MouseEventArgs e)
@@ -191,7 +264,7 @@ namespace GUIH2
             if (_PLAYER.ReturnPlayerCash() > 29999)
             {
                 _PLAYER.SetPlayerCash(30000);
-                _PLAYER.SetPlayerBombs(_PLAYER.GetPlayerBombs() + 1);
+                _PLAYER.AddPlayerBombs(1);
                 UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
             }
             else
@@ -205,7 +278,7 @@ namespace GUIH2
             if (_PLAYER.ReturnPlayerCash() > 499)
             {
                 _PLAYER.SetPlayerCash(500);
-                _PLAYER.SetPlayerSoldiers(_PLAYER.GetPlayerSoldiers() + 1);
+                _PLAYER.AddPlayerSoldiers(1);
                 UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
             }
             else
@@ -219,7 +292,7 @@ namespace GUIH2
             if (_PLAYER.ReturnPlayerCash() > 2499)
             {
                 _PLAYER.SetPlayerCash(2500);
-                _PLAYER.SetPlayerPlanes(_PLAYER.GetPlayerPlanes() + 1);
+                _PLAYER.AddPlayerPlanes(1);
                 UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
             }
             else
@@ -233,7 +306,7 @@ namespace GUIH2
             if (_PLAYER.ReturnPlayerCash() > 2000)
             {
                 _PLAYER.SetPlayerCash(2000);
-                _PLAYER.SetPlayerTanks(_PLAYER.GetPlayerTanks() + 1);
+                _PLAYER.AddPlayerTanks(1);
                 UpdateItems(_PLAYER.GetPlayerBombs(), _PLAYER.GetPlayerSoldiers(), _PLAYER.GetPlayerPlanes(), _PLAYER.GetPlayerTanks());
             }
             else
@@ -241,5 +314,7 @@ namespace GUIH2
                 //Alert player not enough cash!
             }
         }
+
+
     }
 }

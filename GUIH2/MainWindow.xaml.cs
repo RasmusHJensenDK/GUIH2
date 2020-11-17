@@ -19,11 +19,9 @@ namespace GUIH2
 {
     public partial class MainWindow : Window
     {
-        private string username = "Username";
         public MainWindow()
         {
             InitializeComponent();
-            un.Text = username;
         }
         //Lobby
         private void enterShoppinggrounds_Click(object sender, RoutedEventArgs e)

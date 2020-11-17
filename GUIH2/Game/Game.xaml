@@ -74,19 +74,19 @@
         <Button Content="GO TO WAR" Background="Red" BorderBrush="Gray" BorderThickness="4" Foreground="Yellow" FontWeight="Bold" FontSize="20" Grid.Column="2" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="2" VerticalAlignment="Top" Height="55" Width="208"/>
         <StackPanel Opacity="0.9" Name="SPShop" Visibility="Visible" Background="white" Grid.ColumnSpan="3" Margin="185,84,185,166" Grid.RowSpan="3" Grid.Column="1">
             <Image Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\Rockets.png" Height="100" Width="100"/>
-            <Label Foreground="black" HorizontalContentAlignment="center" Content="Cost pr unit: 12000 USD | Sell pr unit: 9400 USD "/>
+            <Label Name="lblBombPrice" Foreground="black" HorizontalContentAlignment="center" Content="Cost pr unit: 12000 USD | Sell pr unit: 9400 USD "/>
             <Button Name="bBUYBOMB" Width="200" Content="Buy Atomic Bomb" Click="BUYBOMB"/>
             <Button Name="buttonSELLBOMB" Width="200" Content="Sell Atomic Bomb"/>
             <Image Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\pngegg.png" Height="100" Width="100"/>
-            <Label Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 500 USD"/>
+            <Label Name="lblSoldierprice" Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 500 USD | Sell price unit: 400 USD"/>
             <Button Name="buttonBUYSOLDIER" Width="200" Content="Buy Soldiers" Click="bBUYSOLDIER"/>
             <Button Name="buttonSELLSOLDIER" Width="200" Content="Sell Soldiers"/>
             <Image Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\clipart2231689.png" Height="100" Width="100"/>
-            <Label Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 2500 USD"/>
+            <Label Name="lblplaneprice" Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 2500 USD | Sell price unit: 2100 USA"/>
             <Button Name="buttonBUYPLANE" Width="200" Content="Buy Planes" Click="bBUYPLANE"/>
             <Button Name="buttonSELLPLANE" Width="200" Content="Sell Planes"/>
             <Image Source="C:\wwwroot\GUIH2\GUIH2\GameMedia\bobobo.png" Height="100" Width="100"/>
-            <Label Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 2000 USD"/>
+            <Label Name="lblTankprice" Foreground="black" HorizontalContentAlignment="center" Content="Price pr unit: 2000 USD | Sell price unit: 1900"/>
             <Button Name="buttonBUYTANK" Width="200" Content="Buy Tanks" Click="bBUYTANK"/>
             <Button Name="buttonSELLTANK" Width="200" Content="Sell Tanks"/>
             <Label></Label>

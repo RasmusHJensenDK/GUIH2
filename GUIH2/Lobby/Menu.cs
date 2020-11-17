@@ -33,7 +33,6 @@ namespace GUIH2
             {
                 myParent.LobbyGrid.Children.Add(lbl);
             }
-         
         }
         public void DrawMenu()
         {
@@ -64,7 +63,6 @@ namespace GUIH2
         private void MenuLabel_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Label labelDown = (Label)sender;
-            int i = 0;
             if((e.ChangedButton == MouseButton.Left))
             {
                if(labelDown.Content.ToString() == "New Game")
